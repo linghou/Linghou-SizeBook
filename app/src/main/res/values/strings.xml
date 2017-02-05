@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Linghou-SizeBook</string>
+
+
+
+    <string name="title_activity_editor">EditorActivity</string>
+    <string name="new_name">New SizeBook</string>
+    <string name="name_updated">SizeBook updated</string>
+    <string name="action_delete">Delete</string>
+    <string name="name_deleted">SizeBook deleted</string>
+    <string name="name">SizeBook</string>
+
+    <string name="button_create">Create</string>
+</resources>
