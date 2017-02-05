@@ -20,6 +20,7 @@ import android.widget.Toast;
 public class EditorActivity extends AppCompatActivity {
 
     private String action;
+    
     //private EditText editor;
     private PersonEditor editor;
     private String noteFilter;
