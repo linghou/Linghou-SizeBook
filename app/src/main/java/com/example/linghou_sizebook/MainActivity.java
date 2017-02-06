@@ -80,7 +80,8 @@ public class MainActivity extends AppCompatActivity
         //for list counts
         ListView listView = (ListView) findViewById(android.R.id.list);
         TextView countLabel = (TextView) findViewById(R.id.count);
-        countLabel.setText(Integer.toString(listView.getAdapter().getCount()));
+        countLabel.setText(Integer.toString(listView.getAdapter().getCount()) +
+        "\nPeople in the Book");
     }
 
     @Override
