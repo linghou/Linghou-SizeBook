@@ -27,8 +27,6 @@ public class NotesCursorAdapter extends CursorAdapter{
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
 
-
-
         String noteText = cursor.getString(
                 cursor.getColumnIndex(DBOpenHelper.NOTE_TEXT));
 
@@ -40,8 +38,6 @@ public class NotesCursorAdapter extends CursorAdapter{
         } else{
             bustValue = person.getBust().toString();
         }
-
-
         if (person.getChest() == null ){
             chestValue = "";
         }else {
@@ -50,7 +46,7 @@ public class NotesCursorAdapter extends CursorAdapter{
         if (person.getWaist() == null) {
             waistValue = "";
         }else{
-            waistValue = person.getChest().toString();
+            waistValue = person.getWaist().toString();
         }
         if (person.getInseam() == null) {
             inseamValue = "";
@@ -61,7 +57,7 @@ public class NotesCursorAdapter extends CursorAdapter{
         TextView tv = (TextView) view.findViewById(R.id.tvNote);
 
 
-
+//So that view shows Bust Chest Waist Inseam
         String finalText = person.getName() + "\n" +
                 "Bust: " + bustValue + "\n" +
                 "Chest: " + chestValue + "\n" +

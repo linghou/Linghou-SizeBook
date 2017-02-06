@@ -18,7 +18,7 @@ import android.widget.Toast;
 /**
  * Created by linghou on 2017-02-03.
  */
-
+//Based on the tutorial from https://www.lynda.com/Android-tutorials/Building-Note-Taking-App-Android/377485-2.html
 public class EditorActivity extends AppCompatActivity {
 
     private String action;

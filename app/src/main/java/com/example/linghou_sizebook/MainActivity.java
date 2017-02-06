@@ -54,14 +54,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-
-
-
-
-
-
-
     private void restartLoader() {
         getLoaderManager().restartLoader(0, null, this);
     }
