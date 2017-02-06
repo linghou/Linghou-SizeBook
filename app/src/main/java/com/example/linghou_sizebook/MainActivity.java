@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -74,6 +75,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         cursorAdapter.swapCursor(data);
+
+        //taken from http://stackoverflow.com/questions/25348311/how-to-count-total-items-in-a-listview-in-android
+        //for list counts
+        ListView listView = (ListView) findViewById(android.R.id.list);
+        TextView countLabel = (TextView) findViewById(R.id.count);
+        countLabel.setText(Integer.toString(listView.getAdapter().getCount()));
     }
 
     @Override
@@ -92,6 +99,9 @@ public class MainActivity extends AppCompatActivity
         if (requestCode == EDITOR_REQUEST_CODE && resultCode == RESULT_OK) {
             restartLoader();
         }
+
     }
+
+
 }
 

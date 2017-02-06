@@ -23,23 +23,23 @@ public class PersonEditor {
     public PersonEditor(Context context){
         this.linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
-        this.name = new EditTextWithLabel(context, "Name");
+        this.name = new EditTextWithLabel(context, "Name", false);
         linearLayout.addView(this.name.getLinearLayout());
-        this.date = new EditTextWithLabel(context, "Date");
+        this.date = new EditTextWithLabel(context, "Date",false, "YYYY-MM-DD");
         linearLayout.addView(this.date.getLinearLayout());
-        this.neck = new EditTextWithLabel(context, "Neck");
+        this.neck = new EditTextWithLabel(context, "Neck",true);
         linearLayout.addView(this.neck.getLinearLayout());
-        this.bust = new EditTextWithLabel(context, "Bust");
+        this.bust = new EditTextWithLabel(context, "Bust",true);
         linearLayout.addView(this.bust.getLinearLayout());
-        this.chest = new EditTextWithLabel(context, "Chest");
+        this.chest = new EditTextWithLabel(context, "Chest",true);
         linearLayout.addView(this.chest.getLinearLayout());
-        this.waist = new EditTextWithLabel(context, "Waist");
+        this.waist = new EditTextWithLabel(context, "Waist",true);
         linearLayout.addView(this.waist.getLinearLayout());
-        this.hip = new EditTextWithLabel(context, "Hip");
+        this.hip = new EditTextWithLabel(context, "Hip",true);
         linearLayout.addView(this.hip.getLinearLayout());
-        this.inseam = new EditTextWithLabel(context, "Inseam");
+        this.inseam = new EditTextWithLabel(context, "Inseam",true);
         linearLayout.addView(this.inseam.getLinearLayout());
-        this.comment = new EditTextWithLabel(context, "Comment");
+        this.comment = new EditTextWithLabel(context, "Comment",false);
         linearLayout.addView(this.comment.getLinearLayout());
     }
     public LinearLayout getLinearLayout() {

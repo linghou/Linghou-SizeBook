@@ -2,11 +2,13 @@ package com.example.linghou_sizebook;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +22,7 @@ import android.widget.Toast;
 public class EditorActivity extends AppCompatActivity {
 
     private String action;
-    
+
     //private EditText editor;
     private PersonEditor editor;
     private String noteFilter;
@@ -92,15 +94,23 @@ public class EditorActivity extends AppCompatActivity {
     private void finishEditing() {
 
         Person person = editor.getPerson();
+//taken from http://stackoverflow.com/questions/2115758/how-do-i-display-an-alert-dialog-on-android
+        if (person.getName().equals("")) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Warning")
+                    .setMessage("Name required!!")
+                    .show();
+            return;
+        }
 
         switch (action) {
             case Intent.ACTION_INSERT:
                 insertNote(person);
                 break;
             case Intent.ACTION_EDIT:
-                if (PersonConverter.personToString(person).length() == 0) {
-                    deleteNote();
-                }
+                //if (PersonConverter.personToString(person).length() == 0) {
+                //    deleteNote();
+                //}
 
                 if (oldText.equals(person)) {
                    setResult(RESULT_CANCELED);

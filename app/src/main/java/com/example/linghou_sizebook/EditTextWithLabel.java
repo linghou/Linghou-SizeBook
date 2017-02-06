@@ -1,6 +1,7 @@
 package com.example.linghou_sizebook;
 
 import android.content.Context;
+import android.text.InputType;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 public class EditTextWithLabel {
     private EditText editText;
     private LinearLayout linearLayout;
-    public  EditTextWithLabel(Context context, String text){
+    public  EditTextWithLabel(Context context, String text, boolean isNumeric, String hint){
 
         linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -21,6 +22,16 @@ public class EditTextWithLabel {
         this.editText = new EditText(context);
         linearLayout.addView(editText);
 
+        if (isNumeric){
+            this.editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        }
+
+        if (hint != null) this.editText.setHint(hint);
+
+    }
+
+    public EditTextWithLabel(Context context, String text, boolean isNumeric) {
+        this(context, text, isNumeric, null);
     }
 
     public LinearLayout getLinearLayout() {
